@@ -106,6 +106,15 @@ resource "aws_instance" "dilan_ec2_instance" {
 
 }
 
+output "instance_id" {
+  description = "ID of the EC2 instance"
+  value       = aws_instance.dilan_ec2_instance.id
+}
+
+output "instance_public_ip" {
+  description = "Public IP address of the EC2 instance"
+  value       = aws_instance.dilan_ec2_instance.id
+}
 
 #Create Security Group ---------------------
 resource "aws_security_group" "dilan_security_group_01" {

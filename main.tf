@@ -87,7 +87,6 @@ resource "aws_route_table_association" "dilan_internet_access" {
 
 #Create Instance ---------------------------
 resource "aws_instance" "dilan_ec2_instance" {
-  count = 1
   ami = "ami-0440d3b780d96b29d"
   instance_type = "t2.micro"
   subnet_id = aws_subnet.dilan_subnet.id

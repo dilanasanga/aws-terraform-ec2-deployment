@@ -19,8 +19,8 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "" # change to name of your bucket
-    region = "us-west-1"                   # change to your region
+    bucket = "dilan-terraform-remote-state" # change to name of your bucket
+    region = "us-east-1"                   # change to your region
     key    = "terraform.tfstate"
   }
 }

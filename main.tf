@@ -1,15 +1,30 @@
 #Added a hot fix to the code 
 #Added another chnage to the hostfix
 
-variable "access_key" {
-  description = "aws access key"
-  type = string
+#variable "access_key" {
+#  description = "aws access key"
+#  type = string
+#}
+
+#variable "secret_key" {
+#  description = "aws secret key"
+#  type = string
+#}
+
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0.0"
+    }
+  }
+  backend "s3" {
+    bucket = "" # change to name of your bucket
+    region = "us-west-1"                   # change to your region
+    key    = "terraform.tfstate"
+  }
 }
 
-variable "secret_key" {
-  description = "aws secret key"
-  type = string
-}
 
 provider "aws" {
   region = "us-east-1"

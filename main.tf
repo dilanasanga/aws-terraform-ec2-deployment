@@ -112,7 +112,7 @@ output "instance_id" {
 
 output "instance_public_ip" {
   description = "Public IP address of the EC2 instance"
-  value       = aws_instance.dilan_ec2_instance.id
+  value       = aws_instance.dilan_ec2_instance.public_ip
 }
 
 #Create Security Group ---------------------

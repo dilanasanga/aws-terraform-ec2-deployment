@@ -88,21 +88,21 @@ resource "aws_route_table_association" "dilan_internet_access" {
 
 #Create Instance ---------------------------
 resource "aws_instance" "dilan_ec2_instance" {
-  ami = "ami-0440d3b780d96b29d"
+  ami = "ami-0cd59ecaf368e5ccf"
   instance_type = "t2.micro"
   subnet_id = aws_subnet.dilan_subnet.id
   availability_zone = "us-east-1a"
   key_name = "dilan-6374-account"
   associate_public_ip_address = true
   vpc_security_group_ids = [aws_security_group.dilan_security_group_01.id]
-  user_data = <<-EOF
-                #!/bin/bash
-                sudo dnf update -y
-                sudo dnf install -y httpd
-                echo "This is a TEST Apache2 Server charly20412" > /var/www/html/index.html
-                sudo systemctl start httpd
-                sudo systemctl enable httpd
-                EOF
+#  user_data = <<-EOF
+#                #!/bin/bash
+#                sudo dnf update -y
+#                sudo dnf install -y httpd
+#                echo "This is a TEST Apache2 Server charly20412" > /var/www/html/index.html
+#                sudo systemctl start httpd
+#                sudo systemctl enable httpd
+#                EOF
 
 }
 

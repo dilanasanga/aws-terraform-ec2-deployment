@@ -104,6 +104,7 @@ resource "aws_instance" "dilan_ec2_instance" {
 #                sudo systemctl enable httpd
 #                EOF
 
+
 }
 
 output "instance_id" {

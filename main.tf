@@ -107,6 +107,14 @@ resource "aws_instance" "dilan_ec2_instance" {
 
 }
 
+resource "aws_volume_attachment" "ebs_att" {
+  device_name   = "/dev/sdh"
+  volume_id     = "vol-0858d7435ed9632a0"
+  instance_id   = aws_instance.dilan_ec2_instance.id
+  skip_destroy  = true # (if true) Don't detach the volume from the instance to which it is attached at destroy time, and instead just remove the attachment from Terraform state. 
+  
+}
+
 output "instance_id" {
   description = "ID of the EC2 instance"
   value       = aws_instance.dilan_ec2_instance.id
